@@ -1,4 +1,3 @@
-% File: load_profiles.m
 
 function loadProfiles = load_profiles()
     % Dynamic Load Profiles (example profiles for different times of the day)

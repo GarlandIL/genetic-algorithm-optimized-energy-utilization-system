@@ -1,9 +1,7 @@
-% File: solar_battery_specs.m
-
 function [totalSolarPower, batteryCapacity, batterySOC, batteryEfficiency, maxChargeRate, maxDischargeRate, inverterEfficiencyCurve] = solar_battery_specs()
     % Solar System Specifications
     solarPanelRating = 300;  % Watts per panel
-    numSolarPanels = 5;   % Number of solar panels (5 panels * 300 W = 1500 W, matching manuscript)
+    numSolarPanels = 5;   % Number of solar panels (5 panels * 300 W = 1500 W)
     totalSolarPower = solarPanelRating * numSolarPanels;  % Total power in watts
 
     % Battery Specifications

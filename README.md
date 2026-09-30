@@ -29,7 +29,7 @@ By integrating a **Genetic Algorithm (GA)** to pre-schedule circuit connectivity
 
 ---
 
-## Comparative Results (Manuscript Table 4)
+## Performance Comparison
 
 Simulated over a standard 24-hour diurnal cycle with synthetic solar irradiance and dynamic domestic usage patterns:
 
@@ -45,18 +45,18 @@ Simulated over a standard 24-hour diurnal cycle with synthetic solar irradiance 
 
 ```
 .
-├── main.m                                              # Master 1-click execution pipeline
-├── house_specs.m                                       # Table 1: Circuit names, wattage, priority flags
-├── solar_battery_specs.m                               # PV sizing, battery ratings, inverter efficiency model
-├── load_profiles.m                                     # Table 2: 12x24 binary load activity matrix
-├── generate_weather_data.m                             # Synthetic 24-hour solar irradiance & temperature model
-├── plot_weather_data.m                                 # Weather plotting utility
-├── simulate_baseline.m                                 # System A simulation engine (No load shedding)
-├── simulate_load_shedding.m                            # System B simulation engine (Analytical priority shedding)
-├── simulate_ga_optimization.m                          # System C simulation engine (Genetic Algorithm optimization)
-├── calculate_metrics.m                                 # Performance evaluator & Table 4 generator
-├── visualize_results.m                                 # Figures 1, 4, 5 and Table 3 UI table renderer
-└── weatherData.mat                                     # Pre-generated weather profile data
+├── main.m                         # Master execution pipeline
+├── house_specs.m                  # Circuit definitions, load ratings, and priority flags
+├── solar_battery_specs.m          # PV sizing, battery ratings, and inverter efficiency model
+├── load_profiles.m                # 12x24 binary load activity profile matrix
+├── generate_weather_data.m        # Synthetic 24-hour solar irradiance & temperature model
+├── plot_weather_data.m            # Weather profile visualization utility
+├── simulate_baseline.m            # System A simulation engine (No load shedding)
+├── simulate_load_shedding.m       # System B simulation engine (Analytical priority shedding)
+├── simulate_ga_optimization.m     # System C simulation engine (Genetic Algorithm optimization)
+├── calculate_metrics.m            # Performance metrics evaluator & comparative summary
+├── visualize_results.m            # Result plotting and visualization
+└── weatherData.mat                # Pre-generated weather profile data
 ```
 
 ---
@@ -65,14 +65,15 @@ Simulated over a standard 24-hour diurnal cycle with synthetic solar irradiance 
 
 ### Prerequisites
 * MATLAB (R2018b or later recommended).
-* No additional proprietary toolboxes required (all GA selection, crossover, mutation, and simulation functions are built natively).
+* No additional toolboxes required (all GA selection, crossover, mutation, and simulation routines are implemented natively).
 
-### Execution
-1. Open MATLAB.
-2. Navigate to the project root directory:
-   ```matlab
-   cd 'path/to/FYP'
+### Setup & Execution
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/GarlandIL/genetic-algorithm-optimized-energy-utilization-system.git
+   cd genetic-algorithm-optimized-energy-utilization-system
    ```
+2. Open MATLAB and set the repository folder as your working directory.
 3. Run the master script from the MATLAB Command Window:
    ```matlab
    main
@@ -82,8 +83,7 @@ Simulated over a standard 24-hour diurnal cycle with synthetic solar irradiance 
 * **Figure 1**: Aggregate 24-hour household load curve.
 * **Figure 4**: Hourly solar power curve and System B analytical shedding heatmap.
 * **Figure 5**: System C GA-optimized shedding heatmap showing preserved critical circuits.
-* **Table 3**: Formatted hourly log of solar output, battery SOC, and shed loads.
-* **Table 4**: Summary comparison of Systems A, B, and C.
+* **Summary Tables**: Formatted Command Window and UI tables detailing hourly dispatch and comparative metrics across all systems.
 
 ---
 

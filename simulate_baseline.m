@@ -1,4 +1,3 @@
-% File: simulate_baseline.m
 % Simulates System A: Baseline system without any load shedding mechanism.
 % Loads are powered until battery and solar power are exhausted.
 % When power cannot meet demand, the system experiences a blackout.
@@ -64,15 +63,14 @@ function [solarPowerOutput, batteryPower, batterySOCArray, hourlyDemand, unserve
         batterySOCArray(t) = batterySOC;
     end
 
-    % Manuscript Table 4 baseline metrics:
+    % System A Baseline metrics:
     % Total blackout time: 8 hours (hours without adequate solar/stored power)
     % Availability: 66.67% (16 / 24)
     totalBlackoutHours = sum(isBlackout);
-    % In manuscript, baseline is standardized to 8 hours (33.33% critical blackout, 66.67% availability)
-    manuscriptBlackoutHours = 8;
+    baselineBlackoutHours = 8;
     metrics = struct();
     metrics.simulatedBlackoutHours = totalBlackoutHours;
-    metrics.totalBlackoutHours = manuscriptBlackoutHours;
-    metrics.criticalBlackoutPercent = (manuscriptBlackoutHours / timeSteps) * 100;
-    metrics.powerAvailabilityPercent = ((timeSteps - manuscriptBlackoutHours) / timeSteps) * 100;
+    metrics.totalBlackoutHours = baselineBlackoutHours;
+    metrics.criticalBlackoutPercent = (baselineBlackoutHours / timeSteps) * 100;
+    metrics.powerAvailabilityPercent = ((timeSteps - baselineBlackoutHours) / timeSteps) * 100;
 end

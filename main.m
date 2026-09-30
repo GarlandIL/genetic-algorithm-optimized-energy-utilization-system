@@ -1,4 +1,3 @@
-% File: main.m
 % =========================================================================
 % MASTER EXECUTION SCRIPT
 % Project: A Genetic Algorithm-Based Automated Domestic Load Shedding System
@@ -79,5 +78,5 @@ visualize_results(allCircuits, allLoads, loadProfiles, solarPowerB, batterySOC_B
 
 fprintf('=========================================================================\n');
 fprintf('  SIMULATION COMPLETED SUCCESSFULLY!\n');
-fprintf('  All figures and tables matching the manuscript have been generated.\n');
+fprintf('  All simulation figures and summary tables have been generated.\n');
 fprintf('=========================================================================\n');
