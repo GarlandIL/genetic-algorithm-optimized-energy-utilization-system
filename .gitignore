@@ -1,0 +1,19 @@
+# MATLAB temporary files
+*.asv
+*.m~
+*.autosave
+
+# Generated figures
+*.fig
+
+# System files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Editor files
+*.swp
+*.swo
+
+# PDF documents (manuscript)
+*.pdf
