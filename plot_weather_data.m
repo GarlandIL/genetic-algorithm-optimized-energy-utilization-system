@@ -1,4 +1,3 @@
-% File: plot_weather_data.m
 
 function plot_weather_data()
     % Load the generated weather data

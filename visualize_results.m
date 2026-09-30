@@ -1,5 +1,4 @@
-% File: visualize_results.m
-% Visualizes simulation results matching Manuscript Figures 1, 4, 5 and Table 3.
+% Visualizes simulation results: load profiles, shedding heatmaps, and summary tables.
 
 function visualize_results(allCircuits, allLoads, loadProfiles, solarPowerB, batterySOC_B, shedLoadsB, shedLoadsC, comparisonTable)
 

@@ -1,4 +1,3 @@
-% File: generate_weather_data.m
 
 function weatherData = generate_weather_data()
     rng(0);  % Initialize random number generator for reproducibility

@@ -1,4 +1,3 @@
-% File: house_specs.m
 
 function [voltage, mainCurrent, mainCircuitBreaker, allCircuits, allLoads, allLoadPriority] = house_specs()
     % House and Electrical Specifications

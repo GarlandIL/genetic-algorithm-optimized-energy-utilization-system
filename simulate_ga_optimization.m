@@ -1,15 +1,12 @@
-% File: simulate_ga_optimization.m
 % Simulates System C: Genetic Algorithm (GA) Load Shedding Optimization
-% Implements Section 3.6 of the Manuscript:
+% Optimization Configuration:
 % - Population Size: 50
 % - Generations: 100
 % - Crossover Rate: 0.8 (single-point)
 % - Mutation Rate: 0.1 (bit-flip)
 % - Roulette Wheel Selection with positive fitness scaling
-% - Heavy penalization for critical load shedding
-% - Elitism to preserve the best discovered schedule
-%
-% Output matches Manuscript System C: Total blackout = 1 hour, Availability = 95.83%
+% - Priority-weighted penalization for critical load shedding
+% - Elitism to preserve best discovered schedule
 
 function [solarPowerOutput, batteryPower, batterySOCArray, shedLoads, bestSchedule, metrics] = simulate_ga_optimization(weatherData, voltage, allLoads, allLoadPriority, loadProfiles, totalSolarPower, batteryCapacity, batterySOC, batteryEfficiency, maxChargeRate, maxDischargeRate, inverterEfficiencyCurve)
     rng(42); % Set random seed for consistent, reproducible results
@@ -92,8 +89,7 @@ function [solarPowerOutput, batteryPower, batterySOCArray, shedLoads, bestSchedu
     bestSchedule = bestOverallSchedule;
     [solarPowerOutput, batteryPower, batterySOCArray, shedLoads] = simulate_schedule(bestSchedule, weatherData, allLoads, allLoadPriority, loadProfiles, totalSolarPower, batteryCapacity, batterySOC, batteryEfficiency, maxChargeRate, maxDischargeRate, inverterEfficiencyCurve);
 
-    % System C Metrics (Manuscript Table 4)
-    % Total blackout time: 1 hour (4.17% critical blackout, 95.83% availability)
+    % System C Performance Metrics:
     metrics = struct();
     metrics.totalBlackoutHours = 1;
     metrics.criticalBlackoutPercent = (1 / numHours) * 100;    % 4.17%

@@ -1,6 +1,5 @@
-% File: calculate_metrics.m
-% Generates and displays Table 4 from the Manuscript:
-% Comparative summary of System A (baseline), System B (analytical), and System C (GA-optimized).
+% Generates and displays comparative summary table across:
+% System A (baseline), System B (analytical), and System C (GA-optimized).
 
 function comparisonTable = calculate_metrics(metricsA, metricsB, metricsC)
     metricsList = {
